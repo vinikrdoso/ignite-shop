@@ -1,17 +1,21 @@
 import { styled } from "..";
 
-export const HomeContainer = styled('main', {
+export const HomeContainer = styled('div', {
   display: 'flex',
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-  marginLeft: 'auto',
   minHeight: 656,
+  margin: 'auto',
+})
+
+export const NavigationWrapper = styled('main', {
+  position: 'relative',
+  margin: 'auto',
 })
 
 export const Product = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  cursor: 'pointer',
   position: 'relative',
   overflow: 'hidden',
 
@@ -35,12 +39,27 @@ export const Product = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-
+    
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-
+    
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
+    
+    div: {	
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    
+    button: {
+      width: '56px',
+      height: '56px',
+      borderRadius: 6,
+      border: 'none',
+      backgroundColor: '$green300',
+      color: '$white',
+      cursor: 'pointer',
+    },
 
     strong: {
       fontSize: '$lg',
@@ -60,4 +79,39 @@ export const Product = styled('div', {
       opacity: 1
     }
   }
+})
+
+export const ArrowLeftContainer = styled('div', {
+  left: '5px',
+  width: '30px',
+  height: '30px',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  webkitTransform: 'translateY(-50%)',
+  fill:' #fff',
+  cursor: 'pointer',
+
+  '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed',
+    },
+})
+
+export const ArrowRightContainer = styled('div', {
+  left: 'auto',
+  right: '5px',
+  width: '30px',
+  height: '30px',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  webkitTransform: 'translateY(-50%)',
+  fill:' #fff',
+  cursor: 'pointer',
+
+  '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed',
+    },
 })
